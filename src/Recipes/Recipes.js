@@ -31,7 +31,7 @@ export default class Recipes extends React.Component {
         this.chip = "";
     }
 
-    componentDidMount(){
+    componentDidMount() {
         M.FormSelect.init(this.select)
     }
 
@@ -63,21 +63,21 @@ export default class Recipes extends React.Component {
     }
 
     search = (event) => {
-        if(this.state.searchBy === 'name'){
+        if (this.state.searchBy === 'name') {
             let dummy = this.state.recipes.filter(rec => rec.name.split(' ').some(w => w.toLowerCase().startsWith(event.target.value.toLowerCase())))
             this.setState({
                 filtered: dummy
             })
         }
 
-        if(this.state.searchBy === 'tags'){
+        if (this.state.searchBy === 'tags') {
             let dummy = this.state.recipes.filter(rec => rec.tags.some(tag => tag.toLowerCase().startsWith(event.target.value.toLowerCase())));
             this.setState({
                 filtered: dummy
             })
         }
 
-        if(this.state.searchBy === 'author'){
+        if (this.state.searchBy === 'author') {
             let dummy = this.state.recipes.filter(rec => rec.user.username.toLowerCase().startsWith(event.target.value.toLowerCase()));
             this.setState({
                 filtered: dummy
@@ -117,22 +117,30 @@ export default class Recipes extends React.Component {
                 <div className="row">
                     {
                         this.state.filtered.map(recipe =>
-                            <div className="card sticky-action col s6 m4 l3" key={recipe.id}>
+                            <div className="card horizontal col s12" key={recipe.id}>
                                 <div className="card-image waves-effect waves-block waves-light">
                                     <img className="activator" alt="" src={recipe.photo} />
                                 </div>
-                                <div className="card-content">
-                                    <span className="card-title activator grey-text text-darken-4">{recipe.name}<i className="material-icons right">more_vert</i></span>
-                                    <p><span>Time: {recipe.time_to_cook} minutes</span></p>
-                                    <div className="card-action">
-                                        <a onClick={() => this.edit(recipe.id)}>Edit</a>
-                                        <a onClick={() => this.delete(recipe.id)}>Delete</a>
+                                <div class="card-stacked">
+                                    <div className="card-content">
+                                        <span className="card-title activator grey-text text-darken-4">{recipe.name}<i className="material-icons right">more_vert</i></span>
+                                        <p><span><span className="bold">Author:</span> {recipe.user.username}</span></p>
+                                        <p><span><span className="bold">Time:</span> {recipe.time_to_cook} minutes</span></p>
+                                        <p><span><span className="bold">Tags:</span> {recipe.tags.map((tag, index) => <span> {tag}{recipe.tags[index + 1] ? "," : ""} </span>)
+                                        } </span></p>
+                                        <p><span><span className="bold">Products:</span> {recipe.products.map((prod, index) => <span> {prod}{recipe.products[index + 1] ? "," : ""} </span>)
+                                        } </span></p>
+                                        <p><span> <span className="bold">Short Desctiption:</span> {recipe.short_description}</span></p>
+                                        <div className="card-action">
+                                            <a onClick={() => this.edit(recipe.id)}>Edit</a>
+                                            <a onClick={() => this.delete(recipe.id)}>Delete</a>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div className="card-reveal">
                                     <span className="card-title grey-text text-darken-4">{recipe.name}<i className="material-icons right">close</i></span>
-                                    <p>{recipe.short_description}</p>
+                                    <p>{recipe.long_description}</p>
                                 </div>
                             </div>
                         )

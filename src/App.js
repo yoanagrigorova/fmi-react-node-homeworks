@@ -50,12 +50,13 @@ class App extends React.Component {
         <div className="App">
           <nav className="teal lighten-2">
             <div className="nav-wrapper">
-              <a href="#!" className="brand-logo">Logo</a>
+              {/* <a href="#!" className="brand-logo">Logo</a> */}
               <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
               {
                 this.state.currentUser ?
                   <ul className="right hide-on-med-and-down">
                     <li><Link to="/recipes" >Recipes</Link></li>
+                    <li><Link to="/add" >Add Recipe</Link></li>
                     <li><Link to={"/profile/" + this.state.currentUser.username}>Profile</Link></li>
                     <li><Link to="/users" >Users</Link></li>
                     <li><a onClick={this.signOut} >Sign Out</a></li>
@@ -75,6 +76,7 @@ class App extends React.Component {
             this.state.currentUser ?
               <ul className="sidenav" id="mobile-demo" ref={(sidenav) => { this.sidenav = sidenav }}>
                 <li><Link to="/recipes" >Recipes</Link></li>
+                <li><Link to="/add" >Add Recipe</Link></li>
                 <li><Link to={"/profile/" + this.state.currentUser.username}>Profile</Link></li>
                 <li><Link to="/users" >Users</Link></li>
                 <li><a onClick={this.signOut} >Sign Out</a></li>
