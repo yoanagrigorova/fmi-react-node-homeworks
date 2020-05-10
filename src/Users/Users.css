@@ -1,0 +1,12 @@
+.users .fieldName{
+    font-weight: bold;
+}
+
+.users .card-content{
+    text-align: left;
+}
+
+.editUser {
+    width:70%;
+    margin: auto;
+}
