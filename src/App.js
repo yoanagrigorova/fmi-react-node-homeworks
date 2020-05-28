@@ -50,7 +50,6 @@ class App extends React.Component {
         <div className="App">
           <nav className="teal lighten-2">
             <div className="nav-wrapper">
-              {/* <a href="#!" className="brand-logo">Logo</a> */}
               <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
               {
                 this.state.currentUser ?
@@ -63,7 +62,7 @@ class App extends React.Component {
 
                   </ul> :
                   <ul className="right hide-on-med-and-down">
-                    <li><Link to="/login" >Login</Link></li>
+                    <li><Link to="/login">Login</Link></li>
                     <li><Link to="/registration">Registration</Link></li>
                   </ul>
               }
@@ -89,7 +88,6 @@ class App extends React.Component {
 
           {
             this.state.currentUser ?
-
               <Switch>
                 <Route path="/profile/:username" component={Profile}>
                 </Route>
@@ -111,10 +109,7 @@ class App extends React.Component {
                 <Route path="/login" render={(props) => <Login {...props} update={this.update} />}>
                 </Route>
               </Switch>
-
           }
-
-
         </div>
       </Router>
     );

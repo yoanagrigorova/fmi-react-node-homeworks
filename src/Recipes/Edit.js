@@ -185,33 +185,33 @@ export default class Edit extends React.Component {
                             }
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input id="name" placeholder="Name" type="text" required className="validate" onChange={this.handleChange} value={this.state.recipe.name} />
+                                    <input id="name" type="text" required className="validate" onChange={this.handleChange} value={this.state.recipe.name} />
                                     <label htmlFor="name">Name</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input id="photo" placeholder="Photo" type="text" required className="validate" onChange={this.handleChange} value={this.state.recipe.photo} />
+                                    <input id="photo" type="text" required className="validate" onChange={this.handleChange} value={this.state.recipe.photo} />
                                     <label htmlFor="photo">Photo</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <textarea id="short_description" ref={(short) => { this.short = short }} placeholder="Short Description" className="materialize-textarea" data-length="256" onChange={this.handleChange}
+                                    <textarea id="short_description" ref={(short) => { this.short = short }} className="materialize-textarea" data-length="256" onChange={this.handleChange}
                                         value={this.state.recipe.short_description}></textarea>
                                     <label htmlFor="short_description">Short Description</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <textarea id="long_description" ref={(long) => { this.long = long }} placeholder="Long Description" required className="materialize-textarea" data-length="2048" onChange={this.handleChange}
+                                    <textarea id="long_description" ref={(long) => { this.long = long }} required className="materialize-textarea" data-length="2048" onChange={this.handleChange}
                                         value={this.state.recipe.long_description}></textarea>
                                     <label htmlFor="long_description">Long Description</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input id="time_to_cook" type="number" placeholder="Time to Cook" className="validate" onChange={this.handleChange} value={this.state.recipe.time_to_cook} />
+                                    <input id="time_to_cook" type="number" className="validate" onChange={this.handleChange} value={this.state.recipe.time_to_cook} />
                                     <label htmlFor="time_to_cook">Time to Cook</label>
                                 </div>
                             </div>
