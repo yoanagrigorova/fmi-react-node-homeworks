@@ -1,0 +1,6 @@
+[submodule "homework62021"]
+	path = homework62021
+	url = https://git.heroku.com/homework62021.git
+[submodule "homeworkserver62021"]
+	path = homeworkserver62021
+	url = https://git.heroku.com/homeworkserver62021.git
