@@ -1,0 +1,11 @@
+.profile{
+    margin-top:50px;
+}
+
+.profile .title {
+    font-weight: bold;
+}
+
+.profile .info{
+    text-align: left;
+}

@@ -1,0 +1,14 @@
+.registration{
+    width: 50%;
+    margin: auto;
+}
+
+.warningMessage{
+    margin-bottom: 0px;
+    color: #e25252;
+    font-weight: 600;
+}
+
+.registration .row {
+    margin-bottom: 0px !important;
+}
